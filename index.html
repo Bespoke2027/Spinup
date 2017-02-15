@@ -10,7 +10,7 @@
 function myMap() {
 
 // Easy Trail
-var p1 = new google.maps.LatLng(57.112468, -2.134854);
+var p1 = new google.maps.LatLng(57.112958, -2.132883);
 var p2 = new google.maps.LatLng(57.111504, -2.132228);
 var p3 = new google.maps.LatLng(57.109967, -2.133109);
 var p4 = new google.maps.LatLng(57.109938, -2.130867);
@@ -21,7 +21,10 @@ var m2 = new google.maps.LatLng(57.111501, -2.137321);
 var m3 = new google.maps.LatLng(57.109964, -2.139100);
 var m4 = new google.maps.LatLng(57.109838, -2.1308533);
 
-
+// Difficult Trail 
+var d1 = new google.maps.LatLng(57.113451, -2.130989);
+var d2 = new google.maps.LatLng(57.112426, -2.127867);
+var d3 = new google.maps.LatLng(57.110748, -2.128736);
 
 
 var mapCanvas = document.getElementById("map");
@@ -30,21 +33,29 @@ var mapOptions = {	center: new google.maps.LatLng(57.110531, -2.131935),
 					mapTypeId: google.maps.MapTypeId.TERRAIN};
 var map = new google.maps.Map(mapCanvas,mapOptions);
 
-  var trail = new google.maps.Polyline({
-    path: [p1, p2, p3, p4],
-    strokeColor: "#32CD32",
-    strokeOpacity: 0.8,
-    strokeWeight: 2
-  });
-    trail.setMap(map);
+var trail = new google.maps.Polyline({
+	path: [p1, p2, p3, p4],
+	strokeColor: "#32CD32",
+	strokeOpacity: 0.8,
+	strokeWeight: 2
+});
+trail.setMap(map);
 	
-	 var trailMed = new google.maps.Polyline({
-    path: [m1, m2, m3, m4],
-    strokeColor: " #FFC200",
-    strokeOpacity: 0.8,
-    strokeWeight: 2
-  });
-    trailMed.setMap(map);
+var trailMed = new google.maps.Polyline({
+	path: [m1, m2, m3, m4],
+	strokeColor: " #FFC200",
+	strokeOpacity: 0.8,
+	strokeWeight: 2
+});
+trailMed.setMap(map);
+
+var trailHard = new google.maps.Polyline({
+	path: [d1, d2, d3],
+	strokeColor: "#FF0000",
+	strokeOpacity: 0.8,
+	strokeWeight: 2 
+});
+trailHard.setMap(map);
 	
 
  var marker = new google.maps.Marker({position:p1});
@@ -52,6 +63,9 @@ var map = new google.maps.Map(mapCanvas,mapOptions);
  
   var marker2 = new google.maps.Marker({position:m1});
  marker2.setMap(map);
+ 
+ var marker3 = new google.maps.Marker({position: d1});
+ marker3.setMap(map);
  
  // Toggle Easy
  document.getElementById("trailToggleEasy").addEventListener("click", function() {
@@ -64,6 +78,7 @@ var map = new google.maps.Map(mapCanvas,mapOptions);
 	marker.setMap(null);
 	}
   });
+  
   // Toggle Medium
  document.getElementById("trailToggleMed").addEventListener("click", function() {
  if (trailMed.getMap() == null && marker2.getMap() == null) {
@@ -76,13 +91,43 @@ var map = new google.maps.Map(mapCanvas,mapOptions);
 	}
   });
   
+   // Toggle Hard
+ document.getElementById("trailToggleHard").addEventListener("click", function() {
+ if (trailHard.getMap() == null && marker3.getMap() == null) {
+	trailHard.setMap(map); 
+	marker3.setMap(map);
+}
+  else { 
+	trailHard.setMap(null);
+	marker3.setMap(null);
+	}
+  });
+  
   
  // easy trail marker
  google.maps.event.addListener(marker,'click',function() {
     var infowindow = new google.maps.InfoWindow({
-      content:"This is a trail! It is quite difficult."
+      content:"This is an easy-ish trail!"
     });
-  infowindow.open(map,marker);
+  infowindow.open(map,p1);
+  
+});
+
+// medium trail marker
+ google.maps.event.addListener(marker2,'click',function() {
+    var infowindow = new google.maps.InfoWindow({
+      content:"This is a medium Trail!"
+    });
+  infowindow.open(map,marker2);
+  
+});
+
+// difficult trail marker
+ google.maps.event.addListener(marker3,'click',function() {
+    var infowindow = new google.maps.InfoWindow({
+      content:"This is a very difficult Trail!"
+    });
+  infowindow.open(map,marker3);
   
 });
 
