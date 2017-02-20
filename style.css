@@ -55,6 +55,5 @@ body {
 }
 
 .toggleButtons {
-    float: right;
-    right: 200px;
+   margin: 0px auto;
 }
