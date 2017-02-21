@@ -98,21 +98,21 @@ trailHard.setMap(map);
  // easy trail marker
  var easyInfowindow =     
       '<div id="greenInfowindow"><h2>Bunny Slope</h2></div>'+
-      '<img class="infowindowImage" src="infowindowIcon.jpg" /><div id="bodyContent">'+
+      '<img class="infowindowImage" src="resources/img/infowindowIcon.jpg" /><div id="bodyContent">'+
       '<p><b>This</b> easy slope will have you... something about bike trails ya ya <br /><br />'+
       '<p>Starts at this place and ends in this place, approximate time taken 2 minutes.</p>'+
       '</div>'+
       '</div>';
 var mediumInfowindow =     
       '<div id="amberInfowindow"><h2>Medium Mountaineering</h2></div>'+
-      '<img class="infowindowImage" src="infowindowIcon.jpg" /><div id="bodyContent">'+
+      '<img class="infowindowImage" src="resources/img/infowindowIcon.jpg" /><div id="bodyContent">'+
       '<p><b>This</b> easy slope will have you... something about bike trails ya ya <br /><br />'+
       '<p>Starts at this place and ends in this place, approximate time taken 2 minutes.</p>'+
       '</div>'+
       '</div>';
 var difficultInfowindow =     
       '<div id="redInfowindow"><h2>Hardcore Henry</h2></div>'+
-      '<img class="infowindowImage" src="infowindowIcon.jpg" /><div id="bodyContent">'+
+      '<img class="infowindowImage" src="resources/img/infowindowIcon.jpg" /><div id="bodyContent">'+
       '<p><b>This</b> easy slope will have you... something about bike trails ya ya <br /><br />'+
       '<p>Starts at this place and ends in this place, approximate time taken 2 minutes.</p>'+
       '</div>'+
