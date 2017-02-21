@@ -68,34 +68,28 @@ function myMap() {
 
     // Toggle Easy
     document.getElementById("trailToggleEasy").addEventListener("click", function() {
-        if (trail.getMap() == null && marker.getMap() == null) {
-            trail.setMap(map);
-            marker.setMap(map);
+        if (togglePath(marker, trail)) {
+            document.getElementById("trailToggleEasy").textContent = "Hide Easy Trails";
         } else {
-            trail.setMap(null);
-            marker.setMap(null);
+            document.getElementById("trailToggleEasy").textContent = "Show Easy Trails";
         }
     });
 
     // Toggle Medium
     document.getElementById("trailToggleMed").addEventListener("click", function() {
-        if (trailMed.getMap() == null && marker2.getMap() == null) {
-            trailMed.setMap(map);
-            marker2.setMap(map);
+        if (togglePath(marker2, trailMed)) {
+            document.getElementById("trailToggleMed").textContent = "Hide Medium Trails";
         } else {
-            trailMed.setMap(null);
-            marker2.setMap(null);
+            document.getElementById("trailToggleMed").textContent = "Show Medium Trails";
         }
     });
 
     // Toggle Hard
     document.getElementById("trailToggleHard").addEventListener("click", function() {
-        if (trailHard.getMap() == null && marker3.getMap() == null) {
-            trailHard.setMap(map);
-            marker3.setMap(map);
+        if (togglePath(marker, trail)) {
+            document.getElementById("trailToggleHard").textContent = "Hide Hard Trails";
         } else {
-            trailHard.setMap(null);
-            marker3.setMap(null);
+            document.getElementById("trailToggleHard").textContent = "Show Hard Trails";
         }
     });
 
@@ -150,5 +144,15 @@ function myMap() {
 
     });
 
-
+    function togglePath(mark, trail) {
+        if (trail.getMap() == null && mark.getMap() == null) {
+            trail.setMap(map);
+            mark.setMap(map);
+            return true;
+        } else {
+            trail.setMap(null);
+            mark.setMap(null);
+            return false;
+        }
+    }
 }
