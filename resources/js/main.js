@@ -67,6 +67,9 @@ function myMap() {
     marker3.setMap(map);
 
     // Toggle Easy
+    document.getElementById("trailBtnEs").addEventListener("click", function() {
+        togglePath(marker, trail)
+    });
     document.getElementById("trailToggleEasy").addEventListener("click", function() {
         if (togglePath(marker, trail)) {
             document.getElementById("trailToggleEasy").textContent = "Hide Easy Trails";
@@ -76,6 +79,9 @@ function myMap() {
     });
 
     // Toggle Medium
+    document.getElementById("trailBtnMs").addEventListener("click", function() {
+        togglePath(marker2, trailMed)
+    });
     document.getElementById("trailToggleMed").addEventListener("click", function() {
         if (togglePath(marker2, trailMed)) {
             document.getElementById("trailToggleMed").textContent = "Hide Medium Trails";
@@ -85,6 +91,9 @@ function myMap() {
     });
 
     // Toggle Hard
+    document.getElementById("trailBtnHs").addEventListener("click", function() {
+        togglePath(marker3, trailHard)
+    });
     document.getElementById("trailToggleHard").addEventListener("click", function() {
         if (togglePath(marker, trail)) {
             document.getElementById("trailToggleHard").textContent = "Hide Hard Trails";
