@@ -20,35 +20,6 @@ button {
     transition-duration: 0.4s;
 }
 
-.wideHeader {
-    width: 100%;
-    background-color: black;
-    overflow: auto;
-    border: 0px;
-}
-
-.smallHeader {
-    display: none;
-    width: 100%;
-        margin: 0;
-        background-color: black;
-}
-
-.smallHeader img {
-    margin-left: 15%;
-    width: 70%;
-}
-.smallHeader .trailBtnContainSmall{
-    width: 100%;
-    padding: 0;
-
-}
-.smallHeader .trailBtnContainSmall *{
-    float: left;
-    margin: 0;
-    width: 33.3%;
-}
-
 #map {
         margin: 0;
     width: 100%;
@@ -82,12 +53,38 @@ button {
     padding: 0.5em;
 }
 
-.infowindowImage {
-    height: 100px;
-    padding: 1em 1em 1em 0em;
-    float: left;
-    
+/* ======================================= */
+.wideHeader {
+    width: 100%;
+    background-color: black;
+    overflow: auto;
+    border: 0px;
 }
+/* ======================================= */
+
+/* ======================================= */
+.smallHeader {
+    display: none;
+    width: 100%;
+        margin: 0;
+        background-color: black;
+}
+
+.smallHeader img {
+    margin-left: 15%;
+    width: 70%;
+}
+.smallHeader .trailBtnContainSmall{
+    width: 100%;
+    padding: 0;
+
+}
+.smallHeader .trailBtnContainSmall *{
+    float: left;
+    margin: 0;
+    width: 33.3%;
+}
+/* ======================================= */
 
 .trailBtns {
     width:  100%;
@@ -112,6 +109,13 @@ button {
 
 .trailH:hover{
     background-color: #EF5350;
+}
+
+.infowindowImage {
+    height: 100px;
+    padding: 1em 1em 1em 0em;
+    float: left;
+    
 }
 
 @media only screen and (max-width: 480px) {
