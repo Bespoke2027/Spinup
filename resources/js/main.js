@@ -36,7 +36,7 @@ function myMap() {
 
     var trailMed = new google.maps.Polyline({
         path: [m1, m2, m3, m4],
-        strokeColor: " #FFC200",
+        strokeColor: " #FF7043",
         strokeOpacity: 0.8,
         strokeWeight: 2
     });
