@@ -30,7 +30,7 @@ function myMap() {
         path: [p1, p2, p3, p4],
         strokeColor: "#32CD32",
         strokeOpacity: 0.8,
-        strokeWeight: 2
+        strokeWeight: 4
     });
     trail.setMap(map);
 
@@ -38,7 +38,7 @@ function myMap() {
         path: [m1, m2, m3, m4],
         strokeColor: " #FF7043",
         strokeOpacity: 0.8,
-        strokeWeight: 2
+        strokeWeight: 4
     });
     trailMed.setMap(map);
 
@@ -46,7 +46,7 @@ function myMap() {
         path: [d1, d2, d3],
         strokeColor: "#FF0000",
         strokeOpacity: 0.8,
-        strokeWeight: 2
+        strokeWeight: 4
     });
     trailHard.setMap(map);
 
