@@ -1,190 +1,160 @@
-function myMap() {
+// Function for builing the map
+function buildMap() {
+    // Global variables
+    var map;
+    var trailSelected;
 
-    // Easy Trail
-    var p1 = new google.maps.LatLng(57.112958, -2.132883);
-    var p2 = new google.maps.LatLng(57.111504, -2.132228);
-    var p3 = new google.maps.LatLng(57.109967, -2.133109);
-    var p4 = new google.maps.LatLng(57.109938, -2.130867);
+    // These are arrays, with each point being two variables at an index
+    // Easy trail coords
+    var trailRouteE = [
+        {lat: 57.112958,lng: -2.132883},
+        {lat: 57.111504,lng: -2.132228},
+        {lat: 57.109967,lng: -2.133109},
+        {lat: 57.109938,lng: -2.130867}
+    ];
 
-    // Medium Trail
-    var m1 = new google.maps.LatLng(57.112488, -2.134832);
-    var m2 = new google.maps.LatLng(57.111501, -2.137321);
-    var m3 = new google.maps.LatLng(57.109964, -2.139100);
-    var m4 = new google.maps.LatLng(57.109838, -2.1308533);
+    // Medium trail coords
+    var trailRouteM = [
+        {lat: 57.112488,lng: -2.134832},
+        {lat: 57.111501,lng: -2.137321},
+        {lat: 57.109964,lng: -2.139100},
+        {lat: 57.109838,lng: -2.1308533}
+    ];
 
-    // Difficult Trail 
-    var d1 = new google.maps.LatLng(57.113451, -2.130989);
-    var d2 = new google.maps.LatLng(57.112426, -2.127867);
-    var d3 = new google.maps.LatLng(57.110748, -2.128736);
+    // Hard trail coords
+    var trailRouteH = [
+        {lat: 57.113451,lng: -2.130989},
+        {lat: 57.112426,lng: -2.127867},
+        {lat: 57.110748,lng: -2.128736}
+    ];
 
-
-    var mapCanvas = document.getElementById("map");
-    var mapOptions = {
-        center: new google.maps.LatLng(57.110531, -2.131935),
-        zoom: 15,
-        mapTypeId: google.maps.MapTypeId.TERRAIN
-    };
-    var map = new google.maps.Map(mapCanvas, mapOptions);
-
-    var trail = new google.maps.Polyline({
-        path: [p1, p2, p3, p4],
-        strokeColor: "#32CD32",
-        strokeOpacity: 0.8,
-        strokeWeight: 4
-    });
-    trail.setMap(map);
-
-    var trailMed = new google.maps.Polyline({
-        path: [m1, m2, m3, m4],
-        strokeColor: " #FF7043",
-        strokeOpacity: 0.8,
-        strokeWeight: 4
-    });
-    trailMed.setMap(map);
-
-    var trailHard = new google.maps.Polyline({
-        path: [d1, d2, d3],
-        strokeColor: "#FF0000",
-        strokeOpacity: 0.8,
-        strokeWeight: 4
-    });
-    trailHard.setMap(map);
-
-
-    var marker = new google.maps.Marker({
-        position: p1
-    });
-    marker.setMap(map);
-
-    var marker2 = new google.maps.Marker({
-        position: m1
-    });
-    marker2.setMap(map);
-
-    var marker3 = new google.maps.Marker({
-        position: d1
-    });
-    marker3.setMap(map);
-
-    // Toggle Easy
-    document.getElementById("trailBtnEs").addEventListener("click", function() {
-        togglePath(marker, trail)
-    });
-    document.getElementById("trailToggleEasy").addEventListener("click", function() {
-        if (togglePath(marker, trail)) {
-            document.getElementById("trailToggleEasy").textContent = "Hide Easy Trails";
-        } else {
-            document.getElementById("trailToggleEasy").textContent = "Show Easy Trails";
-        }
-    });
-
-    // Toggle Medium
-    document.getElementById("trailBtnMs").addEventListener("click", function() {
-        togglePath(marker2, trailMed)
-    });
-    document.getElementById("trailToggleMed").addEventListener("click", function() {
-        if (togglePath(marker2, trailMed)) {
-            document.getElementById("trailToggleMed").textContent = "Hide Medium Trails";
-        } else {
-            document.getElementById("trailToggleMed").textContent = "Show Medium Trails";
-        }
-    });
-
-    // Toggle Hard
-    document.getElementById("trailBtnHs").addEventListener("click", function() {
-        togglePath(marker3, trailHard)
-    });
-    document.getElementById("trailToggleHard").addEventListener("click", function() {
-        if (togglePath(marker3, trailHard)) {
-            document.getElementById("trailToggleHard").textContent = "Hide Hard Trails";
-        } else {
-            document.getElementById("trailToggleHard").textContent = "Show Hard Trails";
-        }
-    });
-    
-    // Toggle Black
-    document.getElementById("trailBtnBs").addEventListener("click", function() {
-        togglePath(marker4, trailBlack)
-    });
-    document.getElementById("trailToggleBs").addEventListener("click", function() {
-        if (togglePath(marker4, trailBlack)) {
-            document.getElementById("trailToggleBlack").textContent = "Hide Black Trails";
-        } else {
-            document.getElementById("trailToggleHardBlack").textContent = "Show Black Trails";
-        }
-    });
-
-    // Toggle Extreme
-    document.getElementById("trailBtnXs").addEventListener("click", function() {
-        togglePath(marker5, trailX)
-    });
-    document.getElementById("trailToggleX").addEventListener("click", function() {
-        if (togglePath(marker5, trailX)) {
-            document.getElementById("trailToggleX").textContent = "Hide Extreme Trails";
-        } else {
-            document.getElementById("trailToggleX").textContent = "Show Extreme Trails";
-        }
-    });
-
-    // easy trail marker
-    var easyInfowindow =
-        '<div id="greenInfowindow"><h2>Bunny Slope</h2></div>' +
-        '<img class="infowindowImage" src="resources/img/infowindowIcon.jpg" /><div id="bodyContent">' +
-        '<p><b>This</b> easy slope will have you... something about bike trails ya ya <br /><br />' +
-        '<p>Starts at this place and ends in this place, approximate time taken 2 minutes.</p>' +
-        '</div>' +
-        '</div>';
-    var mediumInfowindow =
-        '<div id="amberInfowindow"><h2>Medium Mountaineering</h2></div>' +
-        '<img class="infowindowImage" src="resources/img/infowindowIcon.jpg" /><div id="bodyContent">' +
-        '<p><b>This</b> easy slope will have you... something about bike trails ya ya <br /><br />' +
-        '<p>Starts at this place and ends in this place, approximate time taken 2 minutes.</p>' +
-        '</div>' +
-        '</div>';
-    var difficultInfowindow =
-        '<div id="redInfowindow"><h2>Hardcore Henry</h2></div>' +
-        '<img class="infowindowImage" src="resources/img/infowindowIcon.jpg" /><div id="bodyContent">' +
+    // Easy trail information box contents
+    var infoE =
+        '<div class="info infoE" id="infoE"><h2>Bunny Slope</h2></div>' +
+        '<img class="infoImg" src="resources/img/infowindowIcon.jpg" /><div class="bodyContent">' +
         '<p><b>This</b> easy slope will have you... something about bike trails ya ya <br /><br />' +
         '<p>Starts at this place and ends in this place, approximate time taken 2 minutes.</p>' +
         '</div>' +
         '</div>';
 
+    // Medium trail information box contents
+    var infoM =
+        '<div class="info infoM" id="infoM"><h2>Medium Mountaineering</h2></div>' +
+        '<img class="infoImg" src="resources/img/infowindowIcon.jpg" /><div class="bodyContent">' +
+        '<p><b>This</b> easy slope will have you... something about bike trails ya ya <br /><br />' +
+        '<p>Starts at this place and ends in this place, approximate time taken 2 minutes.</p>' +
+        '</div>' +
+        '</div>';
 
-    google.maps.event.addListener(marker, 'click', function() {
-        var infowindow = new google.maps.InfoWindow({
-            content: easyInfowindow
+    // Hard trail information box contents
+    var infoH =
+        '<div class="info infoH" id="infoH"><h2>Hardcore Henry</h2></div>' +
+        '<img class="infoImg" src="resources/img/infowindowIcon.jpg" /><div class="bodyContent">' +
+        '<p><b>This</b> easy slope will have you... something about bike trails ya ya <br /><br />' +
+        '<p>Starts at this place and ends in this place, approximate time taken 2 minutes.</p>' +
+        '</div>' +
+        '</div>';
+
+    // Function to handle building the map
+    function initialize() {
+        // Set the map centre
+        trailSelected = new google.maps.LatLng(57.110531, -2.131935);
+        // Seet the map ID
+        var mapCanvas = document.getElementById('google-map');
+        // Map options
+        var mapOptions = {
+            // The center of the map, will be used later for zooming to the selected trail
+            center: trailSelected,
+            // Default zoom level for the map
+            zoom: 15,
+            // Type of map to show
+            mapTypeId: google.maps.MapTypeId.TERRAIN
+        };
+        // set the new map object
+        map = new google.maps.Map(mapCanvas, mapOptions);
+
+        /* NOTE TO FUTURE GENERATIONS
+        This is where you add the Routes made earlier
+        map object, trail route coords, info for info box, colour of the line, name of the button for toggling(this needs to be improved) */
+        // Add the easy route
+        addRoute(map, trailRouteE, infoE, "#32CD32", "trailBtnE");
+        // Add the medium route
+        addRoute(map, trailRouteM, infoM, "#2196F3", "trailBtnM");
+        // Add the hard route
+        addRoute(map, trailRouteH, infoH, "#FF0000", "trailBtnH");
+    }
+
+    // Function to add the routes
+    function addRoute(map, trailRoute, info, colour, trailBtn) {
+        // Temporary variable for the marker we are going to add to the start of the trail
+        var marker = new google.maps.Marker({
+            // set the position of the inital marker to the first coordinate in the trail coords
+            position: trailRoute[0]
         });
-        infowindow.open(map, marker);
+        // Put the marker on the map
+        marker.setMap(map);
 
-    });
-
-    // medium trail marker
-    google.maps.event.addListener(marker2, 'click', function() {
-        var infowindow = new google.maps.InfoWindow({
-            content: mediumInfowindow
+        // Temporary variable for the actual trail we want to make
+        var trail = new google.maps.Polyline({
+            // Set the path to the trail coords array
+            path: trailRoute,
+            // Set geodesic mode for distance calculations later
+            geodesic: true,
+            // Set the colour of our trail to the colour we passed through
+            strokeColor: colour,
+            // Set the trail line opacity
+            strokeOpacity: 1.0,
+            // Set the trail line thickness
+            strokeWeight: 4
         });
-        infowindow.open(map, marker2);
+        // Draw the trail on the map
+        trail.setMap(map);
 
-    });
-
-    // difficult trail marker
-    google.maps.event.addListener(marker3, 'click', function() {
-        var infowindow = new google.maps.InfoWindow({
-            content: difficultInfowindow
+        // This is our event listener for the markers to open the info box
+        google.maps.event.addListener(marker, 'click', function() {
+            // Temporary variable to hold our info box
+            var infoBox = new google.maps.InfoWindow({
+                // Set the contents of our info box to our info box info
+                content: info
+            });
+            // Set the info box to open on our marker
+            infoBox.open(map, marker);
         });
-        infowindow.open(map, marker3);
 
-    });
+        // Add a listener for our toggle buttons
+        document.getElementById(trailBtn).addEventListener("click", function() {
+            // Call the toggle method with our marker and trail that we want to hide or show
+            togglePath(marker, trail);
+        });
 
-    function togglePath(mark, trail) {
-        if (trail.getMap() == null && mark.getMap() == null) {
+        // Run the resize function, this will be used later for zooming to trails
+        resize();
+        // Add a listener to run the resize function when the window resize to maintain focus
+        google.maps.event.addDomListener(window, 'resize', resize);
+    }
+
+    // Function for showing or hiding our trails and their markers
+    function togglePath(marker, trail) {
+        // Check if the trail and marker are hidden
+        if (trail.getMap() === null && marker.getMap() === null) {
+            // Redraw our trail
             trail.setMap(map);
-            mark.setMap(map);
-            return true;
+            // Place our marker
+            marker.setMap(map);
         } else {
+            // Hide our trail
             trail.setMap(null);
-            mark.setMap(null);
-            return false;
+            // Hide our marker
+            marker.setMap(null);
         }
     }
+
+    // Function to hold the map on the our selected trail
+    function resize() {
+        // Set the map centre to our trail
+        map.setCenter(trailSelected);
+    }
+
+    // Finally run our initialize function to build our map
+    initialize();
 }

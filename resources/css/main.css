@@ -1,153 +1,177 @@
-body {
-    background-color: floralwhite;
-    font-family: sans-serif;
+/* Style our background */
+
+html, body {
+    background: black;
     margin: 0;
     padding: 0;
+    border: 0;
 }
 
+
+/* Style all our buttons */
+
 button {
+    font-family: 'Roboto', sans-serif;
     border: none;
     color: white;
-    padding: 10px 0 10px 0 ;
+    padding: 10px 0 10px 0;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    -webkit-transition-duration: 0.4s;
+    -webkit-webkit-transition-duration: 0.4s;
+    -moz-webkit-transition-duration: 0.4s;
+    -ms-webkit-transition-duration: 0.4s;
+    -o-webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
 
-#map {
-    margin: 0;
+
+/*Set the default size of our google map */
+
+html, body, .google-map {
     width: 100%;
-    height: 700px;
+    height: 94.95%;
 }
 
-#greenInfowindow {
-    width: 100%;
-    background-color: green;
-    padding: 1em;
-    color: white;
-    
-}
 
-#amberInfowindow {  
+/* Styling for all the info boxes */
+
+.info {
     width: 100%;
-    background-color: sandybrown;
-    padding: 1em;
+    height: 100px;
+    float: left;
     color: white;
 }
 
-#redInfowindow {  
-    width: 100%;
-    background-color: red;
-    padding: 1em;
-    color: white;
+.infoE {
+    background: #43A047;
 }
 
-#firstHeading {
-    background-color: green;
-    padding: 0.5em;
+.infoM {
+    background: #3F51B5;
 }
 
-/* ======================================= */
-.wideHeader {
+.infoH {
+    background: #E53935;
+}
+
+.infoB {
+    background: #212121;
+}
+
+.infoX {
+    background: #FF5722;
+}
+
+
+/* Default styling for our header */
+
+.header {
     width: 100%;
     background-color: black;
     overflow: auto;
-    border: 0px;
+    border: 0;
 }
-.wideHeader img {
+
+.header img {
     height: 140px;
     margin-right: 8%;
 }
-.wideHeader .trailBtns{
+
+.header .trailBtns {
     padding: 0;
-    margin: 40px;
-
-}
-/* ======================================= */
-
-/* ======================================= */
-.smallHeader {
-    display: none;
-    width: 100%;
-    margin: 0;
-    background-color: black;
+    margin: 50px;
 }
 
-.smallHeader img {
-    margin-left: 15%;
-    width: 70%;
-}
-.smallHeader .trailBtns{
-    width: 100%;
-    padding: 0;
-
-}
-.smallHeader .trailBtns *{
-    float: left;
-    margin: 0;
-    width: 20%;
-}
-/* ======================================= */
-
-.trailE{
-    background-color: #43A047;
-}
-.trailE:hover{
-    background-color: #66BB6A;
-}
-.trailM{
-    background-color: #3F51B5;
-}
-.trailM:hover{
-    background-color: #7986CB;
-}
-.trailH{
-    background-color: #E53935;
-}
-
-.trailH:hover{
-    background-color: #EF5350;
-}
-.trailB{
-    background-color: #212121;
-}
-
-.trailB:hover{
-    background-color: #616161;
-}
-.trailX{
-    background-color: #FF5722;
-}
-
-.trailX:hover{
-    background-color: #FF7043;
+.header .trailBtns button {
+    width: 140px;
+    margin: 0 5px 0 5px;
 }
 
 
-.infowindowImage {
-    height: 100px;
-    padding: 1em 1em 1em 0em;
-    float: left;
-    
+/* Colouring our buttons and adding hover colours */
+
+.trailE {
+    background: #43A047;
 }
+
+.trailE:hover {
+    background: #66BB6A;
+}
+
+.trailM {
+    background: #3F51B5;
+}
+
+.trailM:hover {
+    background: #7986CB;
+}
+
+.trailH {
+    background: #E53935;
+}
+
+.trailH:hover {
+    background: #EF5350;
+}
+
+.trailB {
+    background: #212121;
+}
+
+.trailB:hover {
+    background: #616161;
+}
+
+.trailX {
+    background: #FF5722;
+}
+
+.trailX:hover {
+    background: #FF7043;
+}
+
+
+/* Badly implemented scaling for the Google Map */
+
+@media only screen and (max-width: 1150px) {
+    html, body, .google-map {
+        width: 100%;
+        height: 93.4%;
+    }
+}
+
+
+/* Scaling for the Mobile view */
 
 @media only screen and (max-width: 480px) {
-    #map {
+    html, body, .google-map {
         width: 100%;
-        height: 440px;
+        height: 89.4%;
     }
-    .trailBtnContainSmall{
+    .trailBtns {
         width: 100%;
-        height: ;
     }
-    .smallHeader{
+    .header {
+        overflow: hidden;
         display: inline-block;
+        width: 100%;
+        margin: 0;
+        background-color: black;
     }
-    .wideHeader{
-        display: none;
+    .header img {
+        display: inline-block;
+        margin-left: 15%;
+        width: 70%;
     }
-
+    .header .trailBtns {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .header .trailBtns button {
+        float: left;
+        margin: 0;
+        width: 20%;
+    }
 }
