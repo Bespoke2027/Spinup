@@ -12,7 +12,7 @@ function myMap() {
     var m3 = new google.maps.LatLng(57.109964, -2.139100);
     var m4 = new google.maps.LatLng(57.109838, -2.1308533);
 
-    // Difficult Trail 
+    // Difficult Trail
     var d1 = new google.maps.LatLng(57.113451, -2.130989);
     var d2 = new google.maps.LatLng(57.112426, -2.127867);
     var d3 = new google.maps.LatLng(57.110748, -2.128736);
@@ -80,7 +80,7 @@ function myMap() {
 
     // Toggle Medium
     document.getElementById("trailBtnMs").addEventListener("click", function() {
-        togglePath(marker2, trailMed)
+        togglePath(marker2, trailMed);
     });
     document.getElementById("trailToggleMed").addEventListener("click", function() {
         if (togglePath(marker2, trailMed)) {
@@ -92,7 +92,7 @@ function myMap() {
 
     // Toggle Hard
     document.getElementById("trailBtnHs").addEventListener("click", function() {
-        togglePath(marker3, trailHard)
+        togglePath(marker3, trailHard);
     });
     document.getElementById("trailToggleHard").addEventListener("click", function() {
         if (togglePath(marker3, trailHard)) {
@@ -101,10 +101,10 @@ function myMap() {
             document.getElementById("trailToggleHard").textContent = "Show Hard Trails";
         }
     });
-    
+
     // Toggle Black
     document.getElementById("trailBtnBs").addEventListener("click", function() {
-        togglePath(marker4, trailBlack)
+        togglePath(marker4, trailBlack);
     });
     document.getElementById("trailToggleBs").addEventListener("click", function() {
         if (togglePath(marker4, trailBlack)) {
@@ -116,7 +116,7 @@ function myMap() {
 
     // Toggle Extreme
     document.getElementById("trailBtnXs").addEventListener("click", function() {
-        togglePath(marker5, trailX)
+        togglePath(marker5, trailX);
     });
     document.getElementById("trailToggleX").addEventListener("click", function() {
         if (togglePath(marker5, trailX)) {
@@ -177,7 +177,7 @@ function myMap() {
     });
 
     function togglePath(mark, trail) {
-        if (trail.getMap() == null && mark.getMap() == null) {
+        if (trail.getMap() === null && mark.getMap() === null) {
             trail.setMap(map);
             mark.setMap(map);
             return true;
