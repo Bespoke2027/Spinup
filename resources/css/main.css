@@ -8,7 +8,7 @@ body {
 button {
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 10px ;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -91,7 +91,7 @@ button {
 .smallHeader .trailBtns *{
     float: left;
     margin: 0;
-    width: 33.3%;
+    width: 25%;
 }
 /* ======================================= */
 
@@ -113,6 +113,13 @@ button {
 
 .trailH:hover{
     background-color: #EF5350;
+}
+.trailB{
+    background-color: #212121;
+}
+
+.trailB:hover{
+    background-color: #616161;
 }
 
 .infowindowImage {
