@@ -67,16 +67,16 @@ function myMap() {
     marker3.setMap(map);
 
     // Toggle Easy
-    document.getElementById("trailBtnEs").addEventListener("click", function() {
-        togglePath(marker, trail)
+    document.getElementById("trailBtnE").addEventListener("click", function() {
+        // togglePath(marker, trail)
     });
-    document.getElementById("trailToggleEasy").addEventListener("click", function() {
-        if (togglePath(marker, trail)) {
-            document.getElementById("trailToggleEasy").textContent = "Hide Easy Trails";
-        } else {
-            document.getElementById("trailToggleEasy").textContent = "Show Easy Trails";
-        }
-    });
+    // document.getElementById("trailToggleEasy").addEventListener("click", function() {
+    //     if (togglePath(marker, trail)) {
+    //         document.getElementById("trailToggleEasy").textContent = "Hide Easy Trails";
+    //     } else {
+    //         document.getElementById("trailToggleEasy").textContent = "Show Easy Trails";
+    //     }
+    // });
 
     // Toggle Medium
     document.getElementById("trailBtnMs").addEventListener("click", function() {

@@ -10,7 +10,6 @@ button {
     color: white;
     padding: 10px 0 10px 0 ;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
     font-size: 16px;
     -webkit-transition-duration: 0.4s;
@@ -63,44 +62,50 @@ button {
 }
 .header .trailBtns{
     padding: 0;
-    margin: 40px;
-
+    margin: 50px;
+}
+.header .trailBtns *{
+    width: 140px;
+    padding: 10px;
+    margin: 0px 5px 0 5px;
 }
 
 .trailE{
-    background-color: #43A047;
+    background: #43A047;
+        -webkit-box-shadow:inset 0px 0px 0px 1px white;
+    -moz-box-shadow:inset 0px 0px 0px 1px white;
+    box-shadow:inset 0px 0px 0px 1px white;
 }
 .trailE:hover{
-    background-color: #66BB6A;
+    background: #66BB6A;
 }
 .trailM{
-    background-color: #3F51B5;
+    background: #3F51B5;
 }
 .trailM:hover{
-    background-color: #7986CB;
+    background: #7986CB;
 }
 .trailH{
-    background-color: #E53935;
+    background: #E53935;
 }
 
 .trailH:hover{
-    background-color: #EF5350;
+    background: #EF5350;
 }
 .trailB{
-    background-color: #212121;
+    background: #212121;
 }
 
 .trailB:hover{
-    background-color: #616161;
+    background: #616161;
 }
 .trailX{
-    background-color: #FF5722;
+    background: #FF5722;
 }
 
 .trailX:hover{
-    background-color: #FF7043;
+    background: #FF7043;
 }
-
 
 .infowindowImage {
     height: 100px;
@@ -114,10 +119,11 @@ button {
         width: 100%;
         height: 440px;
     }
-    .trailBtnContainSmall{
+
+    .trailBtns{
         width: 100%;
-        height: ;
     }
+
     .header{
         overflow: hidden;
         display: inline-block;
