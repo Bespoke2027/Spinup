@@ -95,7 +95,7 @@ function myMap() {
         togglePath(marker3, trailHard)
     });
     document.getElementById("trailToggleHard").addEventListener("click", function() {
-        if (togglePath(marker, trail)) {
+        if (togglePath(marker3, trailHard)) {
             document.getElementById("trailToggleHard").textContent = "Hide Hard Trails";
         } else {
             document.getElementById("trailToggleHard").textContent = "Show Hard Trails";
