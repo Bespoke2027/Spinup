@@ -101,7 +101,30 @@ function myMap() {
             document.getElementById("trailToggleHard").textContent = "Show Hard Trails";
         }
     });
+    
+    // Toggle Black
+    document.getElementById("trailBtnBs").addEventListener("click", function() {
+        togglePath(marker4, trailBlack)
+    });
+    document.getElementById("trailToggleBs").addEventListener("click", function() {
+        if (togglePath(marker4, trailBlack)) {
+            document.getElementById("trailToggleBlack").textContent = "Hide Black Trails";
+        } else {
+            document.getElementById("trailToggleHardBlack").textContent = "Show Black Trails";
+        }
+    });
 
+    // Toggle Extreme
+    document.getElementById("trailBtnXs").addEventListener("click", function() {
+        togglePath(marker5, trailX)
+    });
+    document.getElementById("trailToggleX").addEventListener("click", function() {
+        if (togglePath(marker5, trailX)) {
+            document.getElementById("trailToggleX").textContent = "Hide Extreme Trails";
+        } else {
+            document.getElementById("trailToggleX").textContent = "Show Extreme Trails";
+        }
+    });
 
     // easy trail marker
     var easyInfowindow =
