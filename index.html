@@ -2,24 +2,41 @@
 <html>
 
 <head>
+    <!-- Title of the webapp -->
     <title>Bespoke WebApp</title>
+    <!-- Page information -->
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <!-- Import our css file -->
     <link rel='stylesheet' type='text/css' href='resources/css/main.css'>
+    <!-- Import our js file -->
     <script type='text/javascript' src='resources/js/main.js'></script>
+    <!-- Import Roboto font from google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
 </head>
 
 <body>
+    <!-- The header with all our buttons and the logo -->
     <div class='header'>
+        <!-- Import the logo (Note, the align left is bad practice with HTML but there doesn't seem to be a way to do it without) -->
         <img alt='North East Trail Centre Organisation' src='resources/img/logo.png' align='left' />
+        <!-- Container for our buttons -->
         <div class='trailBtns'>
+            <!-- Button for toggling easy trails -->
             <button class='trailE' id='trailBtnE'>Easy</button>
+            <!-- Button for toggling medium trails -->
             <button class='trailM' id='trailBtnM'>Medium</button>
+            <!-- Button for toggling hard trails -->
             <button class='trailH' id='trailBtnH'>Hard</button>
+            <!-- Button for toggling 'black' trails -->
             <button class='trailB' id='trailBtnB'>Black</button>
+            <!-- Button for toggling extreme trails -->
             <button class='trailX' id='trailBtnX'>Extreme</button>
         </div>
     </div>
+
+    <!-- Container for our google map -->
     <div class='google-map' id='google-map'>
+        <!-- Import our google map -->
         <script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDF0HSyeeFuYM62OW4QSWJ2H4nnG417hsk&callback=buildMap'></script>
     </div>
 </body>

@@ -4,6 +4,7 @@ function buildMap() {
     var map;
     var trailSelected;
 
+    // These are arrays, with each point being two variables at an index
     // Easy trail coords
     var trailRouteE = [
         {lat: 57.112958,lng: -2.132883},
@@ -26,7 +27,7 @@ function buildMap() {
         {lat: 57.112426,lng: -2.127867},
         {lat: 57.110748,lng: -2.128736}
     ];
-    
+
     // Easy trail information box contents
     var infoE =
         '<div class="info infoE" id="infoE"><h2>Bunny Slope</h2></div>' +
