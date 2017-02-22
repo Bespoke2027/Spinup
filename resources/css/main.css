@@ -1,5 +1,6 @@
+
 body {
-    background-color: floralwhite;
+    background-color: black;
     font-family: sans-serif;
     margin: 0;
     padding: 0;
@@ -19,36 +20,35 @@ button {
     transition-duration: 0.4s;
 }
 
-.map {
-    margin: 0;
+html, body, .google-map {
     width: 100%;
-    height: 700px;
+    height: 94.95%;
 }
 
-#greenInfowindow {
+.info {
+    height: 100px;
+    float: left;
+}
+
+.infoE {
     width: 100%;
     background-color: green;
     padding: 1em;
     color: white;
 }
 
-#amberInfowindow {
+.infoM {
     width: 100%;
     background-color: sandybrown;
     padding: 1em;
     color: white;
 }
 
-#redInfowindow {
+.infoH {
     width: 100%;
     background-color: red;
     padding: 1em;
     color: white;
-}
-
-#firstHeading {
-    background-color: green;
-    padding: 0.5em;
 }
 
 .header {
@@ -116,16 +116,17 @@ button {
     background: #FF7043;
 }
 
-.infowindowImage {
-    height: 100px;
-    padding: 1em 1em 1em 0;
-    float: left;
+@media only screen and (max-width: 1150px) {
+    html, body, .google-map {
+        width: 100%;
+        height: 93.4%;
+    }
 }
 
 @media only screen and (max-width: 480px) {
-    .map {
+    html, body, .google-map {
         width: 100%;
-        height: 440px;
+        height: 89.25%;
     }
     .trailBtns {
         width: 100%;

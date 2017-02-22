@@ -1,180 +1,105 @@
-function myMap() {
+function buildMap() {
+    var map;
+    var map_center;
+    var path_bounds;
 
     // Easy Trail
-    var p1 = new google.maps.LatLng(57.112958, -2.132883);
-    var p2 = new google.maps.LatLng(57.111504, -2.132228);
-    var p3 = new google.maps.LatLng(57.109967, -2.133109);
-    var p4 = new google.maps.LatLng(57.109938, -2.130867);
+    var trailRouteE = [
+        {lat: 57.112958,lng: -2.132883},
+        {lat: 57.111504,lng: -2.132228},
+        {lat: 57.109967,lng: -2.133109},
+        {lat: 57.109938,lng: -2.130867}
+    ];
 
     // Medium Trail
-    var m1 = new google.maps.LatLng(57.112488, -2.134832);
-    var m2 = new google.maps.LatLng(57.111501, -2.137321);
-    var m3 = new google.maps.LatLng(57.109964, -2.139100);
-    var m4 = new google.maps.LatLng(57.109838, -2.1308533);
+    var trailRouteM = [
+        {lat: 57.112488,lng: -2.134832},
+        {lat: 57.111501,lng: -2.137321},
+        {lat: 57.109964,lng: -2.139100},
+        {lat: 57.109838,lng: -2.1308533}
+    ];
 
-    // Difficult Trail
-    var d1 = new google.maps.LatLng(57.113451, -2.130989);
-    var d2 = new google.maps.LatLng(57.112426, -2.127867);
-    var d3 = new google.maps.LatLng(57.110748, -2.128736);
+    // Hard Trail
+    var trailRouteH = [
+        {lat: 57.113451,lng: -2.130989},
+        {lat: 57.112426,lng: -2.127867},
+        {lat: 57.110748,lng: -2.128736}
+    ];
 
-
-    var mapCanvas = document.getElementById("map");
-    var mapOptions = {
-        center: new google.maps.LatLng(57.110531, -2.131935),
-        zoom: 15,
-        mapTypeId: google.maps.MapTypeId.TERRAIN
-    };
-    var map = new google.maps.Map(mapCanvas, mapOptions);
-
-    var trail = new google.maps.Polyline({
-        path: [p1, p2, p3, p4],
-        strokeColor: "#32CD32",
-        strokeOpacity: 0.8,
-        strokeWeight: 4
-    });
-    trail.setMap(map);
-
-    var trailMed = new google.maps.Polyline({
-        path: [m1, m2, m3, m4],
-        strokeColor: " #FF7043",
-        strokeOpacity: 0.8,
-        strokeWeight: 4
-    });
-    trailMed.setMap(map);
-
-    var trailHard = new google.maps.Polyline({
-        path: [d1, d2, d3],
-        strokeColor: "#FF0000",
-        strokeOpacity: 0.8,
-        strokeWeight: 4
-    });
-    trailHard.setMap(map);
-
-
-    var marker = new google.maps.Marker({
-        position: p1
-    });
-    marker.setMap(map);
-
-    var marker2 = new google.maps.Marker({
-        position: m1
-    });
-    marker2.setMap(map);
-
-    var marker3 = new google.maps.Marker({
-        position: d1
-    });
-    marker3.setMap(map);
-
-    // Toggle Easy
-    document.getElementById("trailBtnE").addEventListener("click", function() {
-        // togglePath(marker, trail)
-    });
-    // document.getElementById("trailToggleEasy").addEventListener("click", function() {
-    //     if (togglePath(marker, trail)) {
-    //         document.getElementById("trailToggleEasy").textContent = "Hide Easy Trails";
-    //     } else {
-    //         document.getElementById("trailToggleEasy").textContent = "Show Easy Trails";
-    //     }
-    // });
-
-    // Toggle Medium
-    document.getElementById("trailBtnMs").addEventListener("click", function() {
-        togglePath(marker2, trailMed);
-    });
-    document.getElementById("trailToggleMed").addEventListener("click", function() {
-        if (togglePath(marker2, trailMed)) {
-            document.getElementById("trailToggleMed").textContent = "Hide Medium Trails";
-        } else {
-            document.getElementById("trailToggleMed").textContent = "Show Medium Trails";
-        }
-    });
-
-    // Toggle Hard
-    document.getElementById("trailBtnHs").addEventListener("click", function() {
-        togglePath(marker3, trailHard);
-    });
-    document.getElementById("trailToggleHard").addEventListener("click", function() {
-        if (togglePath(marker3, trailHard)) {
-            document.getElementById("trailToggleHard").textContent = "Hide Hard Trails";
-        } else {
-            document.getElementById("trailToggleHard").textContent = "Show Hard Trails";
-        }
-    });
-
-    // Toggle Black
-    document.getElementById("trailBtnBs").addEventListener("click", function() {
-        togglePath(marker4, trailBlack);
-    });
-    document.getElementById("trailToggleBs").addEventListener("click", function() {
-        if (togglePath(marker4, trailBlack)) {
-            document.getElementById("trailToggleBlack").textContent = "Hide Black Trails";
-        } else {
-            document.getElementById("trailToggleHardBlack").textContent = "Show Black Trails";
-        }
-    });
-
-    // Toggle Extreme
-    document.getElementById("trailBtnXs").addEventListener("click", function() {
-        togglePath(marker5, trailX);
-    });
-    document.getElementById("trailToggleX").addEventListener("click", function() {
-        if (togglePath(marker5, trailX)) {
-            document.getElementById("trailToggleX").textContent = "Hide Extreme Trails";
-        } else {
-            document.getElementById("trailToggleX").textContent = "Show Extreme Trails";
-        }
-    });
-
-    // easy trail marker
-    var easyInfowindow =
-        '<div id="greenInfowindow"><h2>Bunny Slope</h2></div>' +
-        '<img class="infowindowImage" src="resources/img/infowindowIcon.jpg" /><div id="bodyContent">' +
-        '<p><b>This</b> easy slope will have you... something about bike trails ya ya <br /><br />' +
-        '<p>Starts at this place and ends in this place, approximate time taken 2 minutes.</p>' +
-        '</div>' +
-        '</div>';
-    var mediumInfowindow =
-        '<div id="amberInfowindow"><h2>Medium Mountaineering</h2></div>' +
-        '<img class="infowindowImage" src="resources/img/infowindowIcon.jpg" /><div id="bodyContent">' +
-        '<p><b>This</b> easy slope will have you... something about bike trails ya ya <br /><br />' +
-        '<p>Starts at this place and ends in this place, approximate time taken 2 minutes.</p>' +
-        '</div>' +
-        '</div>';
-    var difficultInfowindow =
-        '<div id="redInfowindow"><h2>Hardcore Henry</h2></div>' +
-        '<img class="infowindowImage" src="resources/img/infowindowIcon.jpg" /><div id="bodyContent">' +
+    // Easy Trail Info
+    var infoE =
+        '<div class="info infoE" id="infoE"><h2>Bunny Slope</h2></div>' +
+        '<img class="infoImg" src="resources/img/infowindowIcon.jpg" /><div class="bodyContent">' +
         '<p><b>This</b> easy slope will have you... something about bike trails ya ya <br /><br />' +
         '<p>Starts at this place and ends in this place, approximate time taken 2 minutes.</p>' +
         '</div>' +
         '</div>';
 
+    // Medium Trail Info
+    var infoM =
+        '<div class="info infoM" id="infoM"><h2>Medium Mountaineering</h2></div>' +
+        '<img class="infoImg" src="resources/img/infowindowIcon.jpg" /><div class="bodyContent">' +
+        '<p><b>This</b> easy slope will have you... something about bike trails ya ya <br /><br />' +
+        '<p>Starts at this place and ends in this place, approximate time taken 2 minutes.</p>' +
+        '</div>' +
+        '</div>';
 
-    google.maps.event.addListener(marker, 'click', function() {
-        var infowindow = new google.maps.InfoWindow({
-            content: easyInfowindow
+    // Hard Trail Info
+    var infoH =
+        '<div class="info infoH" id="infoH"><h2>Hardcore Henry</h2></div>' +
+        '<img class="infoImg" src="resources/img/infowindowIcon.jpg" /><div class="bodyContent">' +
+        '<p><b>This</b> easy slope will have you... something about bike trails ya ya <br /><br />' +
+        '<p>Starts at this place and ends in this place, approximate time taken 2 minutes.</p>' +
+        '</div>' +
+        '</div>';
+
+    // Function to handle building the map
+    function initialize() {
+        // Set the map centre
+        map_center = new google.maps.LatLng(57.110531, -2.131935);
+        // Seet the map ID
+        var mapCanvas = document.getElementById('google-map');
+        var mapOptions = {
+            center: map_center,
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.TERRAIN
+        };
+        map = new google.maps.Map(mapCanvas, mapOptions);
+
+        addRoute(map, trailRouteE, infoE, "#32CD32", "trailBtnE");
+        addRoute(map, trailRouteM, infoM, "#2196F3", "trailBtnM");
+        addRoute(map, trailRouteH, infoH, "#FF0000", "trailBtnH");
+    }
+
+    function addRoute(map, trailRoute, info, colour, trailBtn) {
+        var marker = new google.maps.Marker({
+            position: trailRoute[0]
         });
-        infowindow.open(map, marker);
+        marker.setMap(map);
 
-    });
-
-    // medium trail marker
-    google.maps.event.addListener(marker2, 'click', function() {
-        var infowindow = new google.maps.InfoWindow({
-            content: mediumInfowindow
+        var trail = new google.maps.Polyline({
+            path: trailRoute,
+            geodesic: true,
+            strokeColor: colour,
+            strokeOpacity: 1.0,
+            strokeWeight: 4
         });
-        infowindow.open(map, marker2);
+        trail.setMap(map);
 
-    });
-
-    // difficult trail marker
-    google.maps.event.addListener(marker3, 'click', function() {
-        var infowindow = new google.maps.InfoWindow({
-            content: difficultInfowindow
+        google.maps.event.addListener(marker, 'click', function() {
+            var infoBox = new google.maps.InfoWindow({
+                content: info
+            });
+            infoBox.open(map, marker);
         });
-        infowindow.open(map, marker3);
+        resize();
 
-    });
+        google.maps.event.addDomListener(window, 'resize', resize);
+        // Toggle Easy
+        document.getElementById(trailBtn).addEventListener("click", function() {
+            togglePath(marker, trail);
+        });
+    }
 
     function togglePath(mark, trail) {
         if (trail.getMap() === null && mark.getMap() === null) {
@@ -187,4 +112,10 @@ function myMap() {
             return false;
         }
     }
-}
+
+    function resize() {
+        map.setCenter(map_center);
+    }
+
+    initialize();
+    }
