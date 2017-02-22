@@ -51,46 +51,21 @@ button {
 }
 
 /* ======================================= */
-.wideHeader {
+.header {
     width: 100%;
     background-color: black;
     overflow: auto;
     border: 0px;
 }
-.wideHeader img {
+.header img {
     height: 140px;
     margin-right: 8%;
 }
-.wideHeader .trailBtns{
+.header .trailBtns{
     padding: 0;
     margin: 40px;
 
 }
-/* ======================================= */
-
-/* ======================================= */
-.smallHeader {
-    display: none;
-    width: 100%;
-    margin: 0;
-    background-color: black;
-}
-
-.smallHeader img {
-    margin-left: 15%;
-    width: 70%;
-}
-.smallHeader .trailBtns{
-    width: 100%;
-    padding: 0;
-
-}
-.smallHeader .trailBtns *{
-    float: left;
-    margin: 0;
-    width: 20%;
-}
-/* ======================================= */
 
 .trailE{
     background-color: #43A047;
@@ -143,11 +118,27 @@ button {
         width: 100%;
         height: ;
     }
-    .smallHeader{
+    .header{
+        overflow: hidden;
         display: inline-block;
-    }
-    .wideHeader{
-        display: none;
+        width: 100%;
+        margin: 0;
+        background-color: black;
     }
 
+    .header img {
+        margin-left: 15%;
+        width: 70%;
+    }
+    .header .trailBtns{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+
+    }
+    .header .trailBtns *{
+        float: left;
+        margin: 0;
+        width: 20%;
+    }
 }
