@@ -95,32 +95,32 @@ html, body, .google-map {
 /* Ripple effect to the buttons when they are pressed */
 .header .trailBtns button:after {
     overflow: hidden;
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 5px;
-  height: 5px;
-  background: rgba(255, 255, 255, .5);
-  opacity: 0;
-  border-radius: 50%;
-  transform: scale(1, 1) translate(-50%);
-  transform-origin: 50% 50%;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, .5);
+    opacity: 0;
+    border-radius: 50%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
 }
 
 @keyframes ripple {
-  0% {
-    transform: scale(0, 0);
-    opacity: 1;
-  }
-  20% {
-    transform: scale(25, 25);
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: scale(40, 40);
-  }
+    0% {
+        transform: scale(0, 0);
+        opacity: 1;
+    }
+    20% {
+        transform: scale(25, 25);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(40, 40);
+    }
 }
 
 .header .trailBtns button:focus:not(:active)::after {
@@ -194,6 +194,29 @@ html, body, .google-map {
     background: #FF7043;
 }
 
+/* sytling for our add button */
+.trailBtnAdd {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
+    border: none;
+    float: right;
+    border-radius: 50%;
+    width: 28px;
+    height: 27px;
+    background: white;
+    color: black;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-size: 22px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    animation: plus-out 0.3s;
+    transition: all 0.3s;
+}
 
 /* Badly implemented scaling for the Google Map */
 
@@ -236,5 +259,10 @@ html, body, .google-map {
         float: left;
         margin: 0;
         width: 20%;
+    }
+    .trailBtnAdd {
+        top: auto;
+        right: 10px;
+        bottom: 5.5em;
     }
 }
