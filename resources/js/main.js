@@ -139,17 +139,17 @@ function buildMap() {
 
     // Function for showing or hiding our trails and their markers
     function togglePath(marker, trail) {
-        // Check if the trail and marker are hidden
-        if (trail.getMap() === null && marker.getMap() === null) {
-            // Redraw our trail
-            trail.setMap(map);
+        // Check if the trail is hidden, we only need to test for trail because we are switching them together
+        if (!trail.getMap()) {
             // Place our marker
             marker.setMap(map);
+            // Draw our trail
+            trail.setMap(map);
         } else {
-            // Hide our trail
-            trail.setMap(null);
             // Hide our marker
             marker.setMap(null);
+            // Hide our trail
+            trail.setMap(null);
         }
     }
 
