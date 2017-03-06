@@ -84,43 +84,43 @@ html, body, .google-map {
 
 /* Colouring our buttons and adding hover colours */
 
-.header .trailBtns .trailE {
+.header .trailBtns .trailEOn {
     background: #43A047;
 }
 
-.header .trailBtns .trailE:hover {
+.header .trailBtns .trailEOn:hover {
     background: #66BB6A;
 }
 
-.header .trailBtns .trailM {
+.header .trailBtns .trailMOn {
     background: #3F51B5;
 }
 
-.header .trailBtns .trailM:hover {
+.header .trailBtns .trailMOn:hover {
     background: #7986CB;
 }
 
-.header .trailBtns .trailH {
+.header .trailBtns .trailHOn {
     background: #E53935;
 }
 
-.header .trailBtns .trailH:hover {
+.header .trailBtns .trailHOn:hover {
     background: #EF5350;
 }
 
-.header .trailBtns .trailB {
+.header .trailBtns .trailBOn {
     background: #212121;
 }
 
-.header .trailBtns .trailB:hover {
+.header .trailBtns .trailBOn:hover {
     background: #616161;
 }
 
-.header .trailBtns .trailX {
+.header .trailBtns .trailXOn {
     background: #FF5722;
 }
 
-.header .trailBtns .trailX:hover {
+.header .trailBtns .trailXOn:hover {
     background: #FF7043;
 }
 

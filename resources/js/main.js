@@ -123,8 +123,10 @@ function buildMap() {
 
         // Add a listener for our toggle buttons
         document.getElementById(trailBtn).addEventListener("click", function() {
-            // Call the toggle method with our marker and trail that we want to hide or show
+            // Call the toggle function with our marker and trail that we want to hide or show
             togglePath(marker, trail);
+            // Call the toggle function to swap the colours of our buttons
+            toggleBtn(trailBtn);
         });
 
         // Run the resize function, this will be used later for zooming to trails
@@ -147,6 +149,11 @@ function buildMap() {
             // Hide our marker
             marker.setMap(null);
         }
+    }
+
+    // Function to toggle the colour of our button
+    function toggleBtn(trailBtn){
+        alert(document.getElementById(trailBtn).className);
     }
 
     // Function to hold the map on the our selected trail
