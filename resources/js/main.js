@@ -128,7 +128,7 @@ function buildMap() {
             // Call the toggle function with our marker and trail that we want to hide or show
             togglePath(marker, trail);
             // Call the toggle function to swap the colours of our buttons
-            toggleBtn(trailBtn,btnClass);
+            toggleBtn(trailBtn, btnClass);
         });
 
         // Run the resize function, this will be used later for zooming to trails
@@ -154,9 +154,9 @@ function buildMap() {
     }
 
     // Function to toggle the colour of our button
-    function toggleBtn(trailBtn,btnClass){
+    function toggleBtn(trailBtn, btnClass){
         // Set the classname of our button to the ID of the button with either Off or On appended
-        btnClass.className = trailBtn + (~btnClass.className.indexOf('On', 8) ? 'Off' : 'On');
+        btnClass.className = trailBtn + ( ~btnClass.className.indexOf('On', 8) ? 'Off' : 'On');
 
     }
 
