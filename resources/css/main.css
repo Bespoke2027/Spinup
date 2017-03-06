@@ -84,43 +84,47 @@ html, body, .google-map {
 
 /* Colouring our buttons and adding hover colours */
 
-.header .trailBtns .trailEOn {
+.header .trailBtns .trailBtnEOn {
     background: #43A047;
 }
 
-.header .trailBtns .trailEOn:hover {
+.header .trailBtns .trailBtnEOff {
+    background: black;
+}
+
+.header .trailBtns .trailBtnEOn:hover, .header .trailBtns .trailBtnEOff:hover {
     background: #66BB6A;
 }
 
-.header .trailBtns .trailMOn {
+.header .trailBtns .trailBtnMOn {
     background: #3F51B5;
 }
 
-.header .trailBtns .trailMOn:hover {
+.header .trailBtns .trailBtnMOn:hover {
     background: #7986CB;
 }
 
-.header .trailBtns .trailHOn {
+.header .trailBtns .trailBtnHOn {
     background: #E53935;
 }
 
-.header .trailBtns .trailHOn:hover {
+.header .trailBtns .trailBtnHOn:hover {
     background: #EF5350;
 }
 
-.header .trailBtns .trailBOn {
+.header .trailBtns .trailBtnBOn {
     background: #212121;
 }
 
-.header .trailBtns .trailBOn:hover {
+.header .trailBtns .trailBtnBOn:hover {
     background: #616161;
 }
 
-.header .trailBtns .trailXOn {
+.header .trailBtns .trailBtnXOn {
     background: #FF5722;
 }
 
-.header .trailBtns .trailXOn:hover {
+.header .trailBtns .trailBtnXOn:hover {
     background: #FF7043;
 }
 

@@ -86,6 +86,8 @@ function buildMap() {
 
     // Function to add the routes
     function addRoute(map, trailRoute, info, colour, trailBtn) {
+        // Temporary variable for our button elemt
+        var btnClass = document.getElementById(trailBtn);
         // Temporary variable for the marker we are going to add to the start of the trail
         var marker = new google.maps.Marker({
             // set the position of the inital marker to the first coordinate in the trail coords
@@ -122,11 +124,11 @@ function buildMap() {
         });
 
         // Add a listener for our toggle buttons
-        document.getElementById(trailBtn).addEventListener("click", function() {
+        btnClass.addEventListener("click", function() {
             // Call the toggle function with our marker and trail that we want to hide or show
             togglePath(marker, trail);
             // Call the toggle function to swap the colours of our buttons
-            toggleBtn(trailBtn);
+            toggleBtn(trailBtn,btnClass);
         });
 
         // Run the resize function, this will be used later for zooming to trails
@@ -152,8 +154,10 @@ function buildMap() {
     }
 
     // Function to toggle the colour of our button
-    function toggleBtn(trailBtn){
-        alert(document.getElementById(trailBtn).className);
+    function toggleBtn(trailBtn,btnClass){
+        // Set the classname of our button to the ID of the button with either Off or On appended
+        btnClass.className = trailBtn + (~btnClass.className.indexOf('On', 8) ? 'Off' : 'On');
+
     }
 
     // Function to hold the map on the our selected trail
