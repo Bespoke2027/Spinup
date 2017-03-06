@@ -7,26 +7,7 @@ html, body {
     border: 0;
 }
 
-
-/* Style all our buttons */
-
-button {
-    font-family: 'Roboto', sans-serif;
-    border: none;
-    color: white;
-    padding: 10px 0 10px 0;
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
-    -webkit-webkit-transition-duration: 0.4s;
-    -moz-webkit-transition-duration: 0.4s;
-    -ms-webkit-transition-duration: 0.4s;
-    -o-webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-}
-
-
-/*Set the default size of our google map */
+/*Set the default size of our page for our google map */
 
 html, body, .google-map {
     width: 100%;
@@ -65,7 +46,6 @@ html, body, .google-map {
 
 
 /* Default styling for our header */
-
 .header {
     width: 100%;
     background-color: black;
@@ -84,51 +64,63 @@ html, body, .google-map {
     margin: 50px;
 }
 
+/* Style all our buttons */
 .header .trailBtns button {
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    color: white;
+    height: 40px;
     width: 140px;
     margin: 0 5px 0 5px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-webkit-transition-duration: 0.4s;
+    -moz-webkit-transition-duration: 0.4s;
+    -ms-webkit-transition-duration: 0.4s;
+    -o-webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
 }
-
 
 /* Colouring our buttons and adding hover colours */
 
-.trailE {
+.header .trailBtns .trailE {
     background: #43A047;
 }
 
-.trailE:hover {
+.header .trailBtns .trailE:hover {
     background: #66BB6A;
 }
 
-.trailM {
+.header .trailBtns .trailM {
     background: #3F51B5;
 }
 
-.trailM:hover {
+.header .trailBtns .trailM:hover {
     background: #7986CB;
 }
 
-.trailH {
+.header .trailBtns .trailH {
     background: #E53935;
 }
 
-.trailH:hover {
+.header .trailBtns .trailH:hover {
     background: #EF5350;
 }
 
-.trailB {
+.header .trailBtns .trailB {
     background: #212121;
 }
 
-.trailB:hover {
+.header .trailBtns .trailB:hover {
     background: #616161;
 }
 
-.trailX {
+.header .trailBtns .trailX {
     background: #FF5722;
 }
 
-.trailX:hover {
+.header .trailBtns .trailX:hover {
     background: #FF7043;
 }
 
