@@ -210,7 +210,7 @@ html, body, .google-map {
 @media only screen and (max-width: 480px) {
     html, body, .google-map {
         width: 100%;
-        height: 89.4%;
+        height: 89.3%;
     }
     .trailBtns {
         width: 100%;
